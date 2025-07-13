@@ -85,3 +85,39 @@ async function updateDataPutty(data) {
         console.error('Erro ao atualizar conexao:', error);
     }
 }
+
+async function selectDataPutty(data) {
+    if(data.cd_cliente != null && data.cd_cliente != undefined) {
+        const query = `
+            select * from putty_data where cd_cliente = $1;
+        `;
+        try {
+            const result = await db.query(query, [data.cd_cliente]);
+            return result.rows;
+        } catch (error) {
+            console.error('Erro ao selecionar conexao:', error);
+            return [];
+        }
+    }
+    else if (data.id != null && data.id != undefined) {
+        const query = `
+            select * from putty_data where id = $1;
+        `;
+        try {
+            const result = await db.query(query, [data.id]);
+            return result.rows;
+        } catch (error) {
+            console.error('Erro ao selecionar conexao:', error);
+            return [];
+        }
+    } else {
+        console.error('cd_cliente ou id é obrigatório para selecionar.');
+        return [];
+        }
+    }
+module.exports = {
+    createDataPutty,
+    deleteDataPutty,
+    updateDataPutty,
+    selectDataPutty
+};
