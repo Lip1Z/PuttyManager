@@ -9,9 +9,225 @@
 </head>
 <body>
   <h1>Pesquisar</h1>
- <button onclick="window.location.href='index.html'" style="background:none; border:none; cursor:pointer;">
+  <button onclick="window.location.href='index.html'" style="background:none; border:none; cursor:pointer;">
     <img src="images/backButton.png" alt="Voltar" style="height:128px; vertical-align:middle;">
   </button>
+  <form id="form-pesquisar" style="display:flex; flex-direction:column; align-items:center; margin-top:10px; gap:15px; margin-bottom:30px;">
+    <input type="number" name="id" placeholder="ID" style="width:220px; height:40px; font-size:1.2rem; border-radius:6px; border:1px solid #1976d2; padding:8px;">
+    <input type="number" name="cd_cliente" placeholder="Código Cliente" style="width:220px; height:40px; font-size:1.2rem; border-radius:6px; border:1px solid #1976d2; padding:8px;">
+  </form>
   <div id="pesquisar-content"></div>
+  <div style="overflow-x:auto; margin-top:10px; display:flex; justify-content:center;">
+    <table id="tabela-pesquisa" style="border-collapse:collapse; min-width:900px;">
+      <thead>
+        <tr style="background:#1976d2; color:#fff;">
+          <th style="padding:8px; border:1px solid #1976d2;">
+            id
+            <div class="resizer" onmousedown="startResize(event, 0)"></div>
+          </th>
+          <th style="padding:8px; border:1px solid #1976d2;">
+            cd_cliente
+            <div class="resizer" onmousedown="startResize(event, 1)"></div>
+          </th>
+          <th style="padding:8px; border:1px solid #1976d2;">
+            usuario
+            <div class="resizer" onmousedown="startResize(event, 2)"></div>
+          </th>
+          <th style="padding:8px; border:1px solid #1976d2;">
+            senha
+            <div class="resizer" onmousedown="startResize(event, 3)"></div>
+          </th>
+          <th style="padding:8px; border:1px solid #1976d2;">
+            balanceador
+            <div class="resizer" onmousedown="startResize(event, 4)"></div>
+          </th>
+          <th style="padding:8px; border:1px solid #1976d2;">
+            tunel1
+            <div class="resizer" onmousedown="startResize(event, 5)"></div>
+          </th>
+          <th style="padding:8px; border:1px solid #1976d2;">
+            tunel2
+            <div class="resizer" onmousedown="startResize(event, 6)"></div>
+          </th>
+          <th style="padding:8px; border:1px solid #1976d2;">
+            tunel3
+            <div class="resizer" onmousedown="startResize(event, 7)"></div>
+          </th>
+          <th style="padding:8px; border:1px solid #1976d2;">
+            criado_por
+            <div class="resizer" onmousedown="startResize(event, 8)"></div>
+          </th>
+          <th style="padding:8px; border:1px solid #1976d2;">
+            criado_em
+            <div class="resizer" onmousedown="startResize(event, 9)"></div>
+          </th>
+          <th style="padding:8px; border:1px solid #1976d2;">
+            alterado_por
+            <div class="resizer" onmousedown="startResize(event, 10)"></div>
+          </th>
+          <th style="padding:8px; border:1px solid #1976d2;">
+            alterado_em
+            <div class="resizer" onmousedown="startResize(event, 11)"></div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+        </tr>
+        <tr>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+        </tr>
+        <tr>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+          <td style="padding:8px; border:1px solid #1976d2;"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
+<div style="width:100%; display:flex; justify-content:center; margin:40px 0 20px 0;">
+  <button id="btn-pesquisar" class="btn-pesquisar">
+    Pesquisar
+  </button>
+</div>
 </html>
+<script>
+// Exemplo de dados fictícios para simular a busca
+const dadosExemplo = [
+  { id: 1, cd_cliente: 101, usuario: 'user1', senha: '1234', balanceador: 'bal1', tunel1: 'tunelA', tunel2: 'tunelB', tunel3: 'tunelC', criado_por: 'admin', criado_em: '2025-07-13 10:00', alterado_por: 'admin', alterado_em: '2025-07-13 12:00' },
+  { id: 2, cd_cliente: 102, usuario: 'user2', senha: 'abcd', balanceador: 'bal2', tunel1: 'tunelX', tunel2: 'tunelY', tunel3: 'tunelZ', criado_por: 'admin', criado_em: '2025-07-12 09:00', alterado_por: 'admin', alterado_em: '2025-07-12 11:00' },
+  { id: 3, cd_cliente: 103, usuario: 'user3', senha: 'xyz', balanceador: 'bal3', tunel1: 'tunelM', tunel2: 'tunelN', tunel3: 'tunelO', criado_por: 'admin', criado_em: '2025-07-11 08:00', alterado_por: 'admin', alterado_em: '2025-07-11 10:00' },
+  { id: 4, cd_cliente: 104, usuario: 'user4', senha: 'pass', balanceador: 'bal4', tunel1: 'tunelP', tunel2: 'tunelQ', tunel3: 'tunelR', criado_por: 'admin', criado_em: '2025-07-10 07:00', alterado_por: 'admin', alterado_em: '2025-07-10 09:00' }
+];
+
+document.getElementById('btn-pesquisar').addEventListener('click', function() {
+  const tbody = document.querySelector('#tabela-pesquisa tbody');
+  tbody.innerHTML = '';
+  // Mostra no máximo 3 linhas
+  dadosExemplo.slice(0, 3).forEach(dado => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="padding:8px; border:1px solid #1976d2;">${dado.id}</td>
+      <td style="padding:8px; border:1px solid #1976d2;">${dado.cd_cliente}</td>
+      <td style="padding:8px; border:1px solid #1976d2;">${dado.usuario}</td>
+      <td style="padding:8px; border:1px solid #1976d2;">${dado.senha}</td>
+      <td style="padding:8px; border:1px solid #1976d2;">${dado.balanceador}</td>
+      <td style="padding:8px; border:1px solid #1976d2;">${dado.tunel1}</td>
+      <td style="padding:8px; border:1px solid #1976d2;">${dado.tunel2}</td>
+      <td style="padding:8px; border:1px solid #1976d2;">${dado.tunel3}</td>
+      <td style="padding:8px; border:1px solid #1976d2;">${dado.criado_por}</td>
+      <td style="padding:8px; border:1px solid #1976d2;">${dado.criado_em}</td>
+      <td style="padding:8px; border:1px solid #1976d2;">${dado.alterado_por}</td>
+      <td style="padding:8px; border:1px solid #1976d2;">${dado.alterado_em}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+});
+</script>
+<script>
+let resizing = false;
+let startX, startWidth, colIndexResize;
+function startResize(e, colIndex) {
+  resizing = true;
+  startX = e.clientX;
+  colIndexResize = colIndex;
+  const tabela = document.getElementById('tabela-pesquisa');
+  startWidth = tabela.rows[0].cells[colIndex].offsetWidth;
+  document.body.style.cursor = 'col-resize';
+  document.addEventListener('mousemove', resizeCol);
+  document.addEventListener('mouseup', stopResize);
+}
+function resizeCol(e) {
+  if (!resizing) return;
+  const tabela = document.getElementById('tabela-pesquisa');
+  const newWidth = Math.max(40, startWidth + (e.clientX - startX));
+  for (let row of tabela.rows) {
+    let cell = row.cells[colIndexResize];
+    if (cell) cell.style.width = newWidth + 'px';
+  }
+}
+function stopResize() {
+  resizing = false;
+  document.body.style.cursor = '';
+  document.removeEventListener('mousemove', resizeCol);
+  document.removeEventListener('mouseup', stopResize);
+}
+</script>
+<style>
+.resizer {
+  display: inline-block;
+  width: 8px;
+  height: 20px;
+  cursor: col-resize;
+  vertical-align: middle;
+  margin-left: 2px;
+  background: transparent;
+}
+.resizer:hover {
+  background: #1976d2;
+}
+</style>
+<script>
+function alterarFonteColuna(colIndex, delta) {
+  const tabela = document.getElementById('tabela-pesquisa');
+  // Pega todas as linhas (incluindo cabeçalho)
+  for (let row of tabela.rows) {
+    let cell = row.cells[colIndex];
+    if (!cell) continue;
+    let current = window.getComputedStyle(cell).fontSize;
+    let size = parseFloat(current);
+    let newSize = Math.max(8, size + delta * 2); // mínimo 8px
+    cell.style.fontSize = newSize + 'px';
+  }
+}
+</script>
+<style>
+.btn-font {
+  font-size: 0.9rem;
+  margin: 0 2px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #1976d2;
+  background: #fff;
+  color: #1976d2;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-font:hover {
+  background: #1976d2;
+  color: #fff;
+}
+</style>
